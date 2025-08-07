@@ -148,12 +148,12 @@ class TerminalManager: ObservableObject {
         
         if let path = path {
             if path.hasPrefix("/") {
-                // Absolute path (within app sandbox)
+                // absolute
                 targetDirectory = URL(fileURLWithPath: localDirectory.path + path)
             } else if path == ".." {
                 targetDirectory = localDirectory.deletingLastPathComponent()
             } else {
-                // Relative path
+                // relative path
                 targetDirectory = localDirectory.appendingPathComponent(path)
             }
         } else {

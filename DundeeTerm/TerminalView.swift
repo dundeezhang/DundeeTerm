@@ -16,7 +16,6 @@ struct TerminalView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Terminal header with connection status
             HStack {
                 Text(terminalManager.isConnected ? "Connected: \(terminalManager.currentHost)" : "Local Terminal")
                     .font(.headline)
@@ -55,7 +54,7 @@ struct TerminalView: View {
                 }
             }
             
-            // Command input
+            // command input
             HStack {
                 Text(terminalManager.currentPrompt)
                     .font(.system(.body, design: .monospaced))
